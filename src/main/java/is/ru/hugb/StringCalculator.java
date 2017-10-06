@@ -1,13 +1,13 @@
 package is.ru.hugb;
 
-public class StringCalculator {
+public class StringCalculator{
 	
 	public static int add(String text){
 		if(text.equals(""))
 			return 0;
 		else{
 			if(text.contains(",")){
-				String numbers[] = text.split(",");
+				String numbers[] = text.split(",|\n");
 				return sum(numbers);
 			}
 			return 1;

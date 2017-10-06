@@ -29,4 +29,9 @@ public class CalculatorTest {
 	public void testMultipleNewLine() {
 		assertEquals(6, StringCalculator.add("1\n2,3"));
 	}
+	
+	@Test
+	public void testMultipleNewLineAndComma() {
+		assertEquals(6, StringCalculator.add("1,2\n3"));
+	}
 }

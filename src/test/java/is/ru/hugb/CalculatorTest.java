@@ -35,13 +35,4 @@ public class CalculatorTest {
 		assertEquals(6, StringCalculator.add("1,2\n3"));
 	}
 	
-	/*@Rule
-	public ExpectedException exception = ExpectedException.none();
-
-	@Test
-	public void testNegatives(){
-		exception.expect(IllegalArgumentException.class);
-		exception.expectMessage("Negatives not allowed: -1");
-		StringCalculator.add("-1,2");		
-	}*/
 }

@@ -25,11 +25,5 @@ public class StringCalculator{
 		}
 		return total;
 	}
-	
-	private static int checkNumbersOver1000(int number) {
-    	if(number > 1000) {
-    		return number;
-    	}
-    	return 0;
-    }
+
 }

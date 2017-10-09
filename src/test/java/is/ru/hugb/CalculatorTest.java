@@ -35,4 +35,8 @@ public class CalculatorTest {
 		assertEquals(6, StringCalculator.add("1,2\n3"));
 	}
 	
+	@Test
+	public void testBiggerThan1000() {
+		assertEquals(1, StringCalculator.add("1,1001"));
+	}
 }

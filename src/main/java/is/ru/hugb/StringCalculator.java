@@ -25,5 +25,19 @@ public class StringCalculator{
 		}
 		return total;
 	}
+	
+	private static int bigNumbers(String [] numbers) {
+    	int total = 0;
+		for(String number : numbers) {
+			int n = toInt(number);
+			if(n < 0)
+				return n;
+			else if(n > 1000)
+				continue;
+			else
+				total += toInt(number);
+		}
+		return total;
+    }
 
 }

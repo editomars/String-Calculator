@@ -18,11 +18,18 @@ public class StringCalculator{
 		return Integer.parseInt(number);
 	}
 	
-	private static int sum (String [] numbers){
+	private static int sum(String [] numbers){
 		int total = 0;
 		for(String number : numbers){
 			total += toInt(number);
 		}
 		return total;
 	}
+	
+	private static int checkNumbersOver1000(int number) {
+    	if(number > 1000) {
+    		return number;
+    	}
+    	return 0;
+    }
 }

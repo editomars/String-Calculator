@@ -36,7 +36,13 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void testBiggerThan1000() {
-		assertEquals(1, StringCalculator.add("1001, 2"));
+	public void testNegatives() {
+		try {
+			StringCalculator.add("-1,2");
+		}
+		catch(RuntimeException e) {
+			assertEquals("Negatives not allowed: -1", e.getMessage());
+		}
 	}
+	
 }

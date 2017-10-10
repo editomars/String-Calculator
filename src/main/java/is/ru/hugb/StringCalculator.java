@@ -1,15 +1,17 @@
 package is.ru.hugb;
 
-public class StringCalculator{
+import java.lang.IllegalArgumentException;
+
+public class StringCalculator {
 	
 	public static int add(String text){
 		if(text.equals(""))
 			return 0;
-		else{
+		else {
 			if(text.contains(",")){
 				String numbers[] = text.split(",|\n");
 				return sum(numbers);
-			}
+		}
 			return 1;
 		}
 	}
@@ -26,18 +28,23 @@ public class StringCalculator{
 		return total;
 	}
 	
-	private static int bigNumbers(String [] numbers) {
-    	int total = 0;
-		for(String number : numbers) {
-			int n = toInt(number);
-			if(n < 0)
-				return n;
-			else if(n > 1000)
-				continue;
-			else
-				total += toInt(number);
+	private static void throwNegatives(String [] numbers) {
+		String messages = "Negatives not allowed: ";
+		String negatives = "";
+		int n = 0;
+		for(String number: numbers) {
+			n = toInt(number);
+			if(n < 0) {
+				if(negatives.equals("")) {
+					negatives = "" + n;
+				}
+				else {
+					negatives = negatives + "," + n;
+				}
+			}
 		}
-		return total;
-    }
-
+		
+		messages += negatives;
+		throw new RuntimeException(messages);
+	}
 }
